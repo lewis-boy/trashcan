@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-items-center mx-auto min-h-screen pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex justify-center min-h-screen pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col items-center sm:items-start">
         <section>
           <div className="h-[92vh] md:h-[95vh] flex flex-col justify-center md:content-center md:text-center mx-auto py-[2rem]">
