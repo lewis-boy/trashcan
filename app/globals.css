@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #386641;
+  --secondary-color: #f8f9fa;
+  --highlight-color: #25a244;
+  --bg-color: #fff;
 }
 
 @theme inline {
@@ -20,7 +24,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   font-family: Arial, Helvetica, sans-serif;
 }
