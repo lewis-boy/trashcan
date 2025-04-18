@@ -6,7 +6,7 @@ const bungeeSpice = Bungee_Spice({
   weight: ["400"], // Bungee Spice only supports 400 weight
 })
 
-export default function Deposit({ ToggleWantForm }) {
+export default function Deposit() {
   return (
     <section className="flex flex-col justify-between items-center h-screen bg-green-700 bg-dots relative">
       {/* Top Band */}
@@ -31,7 +31,7 @@ export default function Deposit({ ToggleWantForm }) {
         <div className="w-full bg-green-500 border-t-12 border-b-12 border-black h-20 overflow-hidden mt-8 mb-16"></div>
         <button
           className={`${bungeeSpice.className} px-6 py-6 rounded-full bg-white text-green-600 font-bold text-xl shadow-lg hover:bg-green-100 hover:scale-105 transition-transform duration-300 ease-in-out mt-4`}
-          onClick={ToggleWantForm}
+          onClick={() => {}}
         >
           🌱 Start Trash Deposit 🌿
         </button>
