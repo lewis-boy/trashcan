@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import { useRouter } from "next/navigation" // Import useRouter
 import { Bungee_Spice } from "next/font/google"
 
@@ -10,9 +10,19 @@ const bungeeSpice = Bungee_Spice({
 
 export default function Input() {
   const router = useRouter() // Initialize the router
+  const [showSlotMachine, setShowSlotMachine] = useState(false) // State to toggle slot machine
+  const [slotResult, setSlotResult] = useState(null) // State to store the final result
+
+  const handleSubmit = () => {
+    setShowSlotMachine(true) // Start the animation
+    setTimeout(() => {
+      const randomNumber = Math.floor(100 + Math.random() * 900) // Generate a random 3-digit number
+      setSlotResult(randomNumber) // Set the result
+    }, 3000) // Simulate spinning for 3 seconds
+  }
 
   return (
-    <section className="flex flex-col justify-between items-center h-screen bg-green-700 bg-dots relative">
+    <section className="flex flex-col justify-between items-center h-screen bg-green-700 bg-dots relative overflow-hidden">
       {/* Top Band */}
       <div className="w-full bg-green-500 border-t-12 border-b-12 border-black h-20 overflow-hidden">
         <div
@@ -25,72 +35,77 @@ export default function Input() {
         ></div>
       </div>
 
-      {/* Middle Section: Email Input, Trash Selection, and Buttons */}
-      <div className="flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[500px] h-auto py-12 px-10 shadow-lg mt-16">
-        {/* Email Input */}
-        <div className="relative w-full mb-8">
-          <label
-            htmlFor="email"
-            className="text-lg font-bold text-black block text-center mb-2"
-          >
-            Enter your email:
-          </label>
-          <div className="relative">
-            <input
-              type="email"
-              id="email"
-              className="w-full px-4 py-2 border-2 border-black rounded-lg"
-              placeholder="example@example.com"
-            />
+      {/* Middle Section */}
+      <div className="flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[500px] h-auto py-12 px-10 shadow-lg mt-16 relative overflow-hidden">
+        <>
+          {/* Email Input */}
+          <div className="relative w-full mb-8">
+            <label
+              htmlFor="email"
+              className="text-lg font-bold text-black block text-center mb-2"
+            >
+              Enter your email:
+            </label>
+            <div className="relative">
+              <input
+                type="email"
+                id="email"
+                className="w-full px-4 py-2 border-2 border-black rounded-lg"
+                placeholder="example@example.com"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Trash Selection */}
-        <p className="text-lg font-bold text-black mb-6">
-          Select types of trash you're depositing:
-        </p>
-        <div className="flex flex-col items-start w-full mb-8">
-          <label className="flex items-center mb-4">
-            <input
-              type="checkbox"
-              className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
-              name="trash-type"
-              value="paper"
-            />
-            <span className="ml-2">Paper</span>
-          </label>
-          <label className="flex items-center mb-4">
-            <input
-              type="checkbox"
-              className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
-              name="trash-type"
-              value="cardboard"
-            />
-            <span className="ml-2">Cardboard</span>
-          </label>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
-              name="trash-type"
-              value="plastic"
-            />
-            <span className="ml-2">Plastic</span>
-          </label>
-        </div>
+          {/* Trash Selection */}
+          <div className="flex flex-col items-start w-full mb-8 ">
+            <p className="text-lg font-bold text-black mb-6">
+              Select types of trash you're depositing:
+            </p>
+            <label className="flex items-center mb-4">
+              <input
+                type="checkbox"
+                className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
+                name="trash-type"
+                value="paper"
+              />
+              <span className="ml-2">Paper</span>
+            </label>
+            <label className="flex items-center mb-4">
+              <input
+                type="checkbox"
+                className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
+                name="trash-type"
+                value="cardboard"
+              />
+              <span className="ml-2">Cardboard</span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="appearance-none w-6 h-6 rounded-full border-4 border-black checked:bg-green-500 checked:border-green-500 checked:after:content-['✔'] checked:after:text-white checked:after:block checked:after:text-center"
+                name="trash-type"
+                value="plastic"
+              />
+              <span className="ml-2">Plastic</span>
+            </label>
+          </div>
 
-        {/* Buttons */}
-        <div className="flex justify-between w-full">
-          <button
-            className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition"
-            onClick={() => router.push("/deposit")} // Navigate back to the deposit page
-          >
-            Cancel
-          </button>
-          <button className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition">
-            Submit
-          </button>
-        </div>
+          {/* Buttons */}
+          <div className="flex justify-between w-full">
+            <button
+              className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition"
+              onClick={() => router.push("/deposit")} // Navigate back to the deposit page
+            >
+              Cancel
+            </button>
+            <button
+              className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition"
+              onClick={handleSubmit} // Start slot machine
+            >
+              Submit
+            </button>
+          </div>
+        </>
       </div>
 
       {/* Bottom Band */}
