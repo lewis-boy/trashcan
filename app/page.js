@@ -76,7 +76,7 @@ export default function Home() {
                 <ul className="flex justify-center gap-[1rem] mt-[1rem] mx-0 mb-[12.5rem] list-none md:mb-[5rem]">
                   <li>
                     <a
-                      href="#info"
+                      href="/info"
                       className="bg-green-600 text-xl no-underline text-current border-5 border-green-50 rounded py-1 px-2 page-btn-links hover:bg-[var(--primary-color)] hover:text-[var(--secondary-color)]"
                     >
                       Learn More
