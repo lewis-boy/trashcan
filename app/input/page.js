@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import { useRouter } from "next/navigation" // Import useRouter
 import { Bungee_Spice } from "next/font/google"
 
 const bungeeSpice = Bungee_Spice({
@@ -8,6 +9,8 @@ const bungeeSpice = Bungee_Spice({
 })
 
 export default function Input() {
+  const router = useRouter() // Initialize the router
+
   return (
     <section className="flex flex-col justify-between items-center h-screen bg-green-700 bg-dots relative">
       {/* Top Band */}
@@ -78,7 +81,10 @@ export default function Input() {
 
         {/* Buttons */}
         <div className="flex justify-between w-full">
-          <button className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition">
+          <button
+            className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition"
+            onClick={() => router.push("/deposit")} // Navigate back to the deposit page
+          >
             Cancel
           </button>
           <button className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition">
