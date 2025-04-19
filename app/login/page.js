@@ -84,7 +84,7 @@ export default function Login() {
             className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-4 w-[80%] text-lg"
           />
           <button
-            onClick={() => router.push("/deposit")}
+            onClick={() => router.push("/points")}
             className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-6 w-[80%] bg-[var(--primary-color)] text-[var(--secondary-color)] text-2xl hover:cursor-pointer hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors duration-300 ease-in-out"
           >
             {isLoading ? "Sending..." : "Login"}

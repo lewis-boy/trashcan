@@ -55,9 +55,146 @@ export default function Points() {
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[800px] h-auto py-12 px-10 shadow-lg mt-16">
+      <div className="relative flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[800px] h-auto py-12 px-10 shadow-lg mt-16">
+        {/* Top-Left Sun */}
+        <div className="absolute top-2 left-2 animate-spin-slow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+            className="stroke-red-500 fill-none"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              fill="none"
+              strokeWidth="2"
+            />
+            <line
+              x1="12"
+              y1="2"
+              x2="12"
+              y2="6"
+            />
+            <line
+              x1="12"
+              y1="18"
+              x2="12"
+              y2="22"
+            />
+            <line
+              x1="2"
+              y1="12"
+              x2="6"
+              y2="12"
+            />
+            <line
+              x1="18"
+              y1="12"
+              x2="22"
+              y2="12"
+            />
+            <line
+              x1="4.2"
+              y1="4.2"
+              x2="6.8"
+              y2="6.8"
+            />
+            <line
+              x1="17.2"
+              y1="17.2"
+              x2="19.8"
+              y2="19.8"
+            />
+            <line
+              x1="4.2"
+              y1="19.8"
+              x2="6.8"
+              y2="17.2"
+            />
+            <line
+              x1="17.2"
+              y1="6.8"
+              x2="19.8"
+              y2="4.2"
+            />
+          </svg>
+        </div>
+
+        {/* Top-Right Sun */}
+        <div className="absolute top-2 right-2 animate-spin-slow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+            className="stroke-red-500 fill-none"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              fill="none"
+              strokeWidth="2"
+            />
+            <line
+              x1="12"
+              y1="2"
+              x2="12"
+              y2="6"
+            />
+            <line
+              x1="12"
+              y1="18"
+              x2="12"
+              y2="22"
+            />
+            <line
+              x1="2"
+              y1="12"
+              x2="6"
+              y2="12"
+            />
+            <line
+              x1="18"
+              y1="12"
+              x2="22"
+              y2="12"
+            />
+            <line
+              x1="4.2"
+              y1="4.2"
+              x2="6.8"
+              y2="6.8"
+            />
+            <line
+              x1="17.2"
+              y1="17.2"
+              x2="19.8"
+              y2="19.8"
+            />
+            <line
+              x1="4.2"
+              y1="19.8"
+              x2="6.8"
+              y2="17.2"
+            />
+            <line
+              x1="17.2"
+              y1="6.8"
+              x2="19.8"
+              y2="4.2"
+            />
+          </svg>
+        </div>
+
         <h1 className="text-4xl font-bold mb-6">Your Points</h1>
-        <p className="text-xl text-center">
+        <p className="text-8xl font-extrabold text-green-600">
+          480<span className="text-2xl font-normal text-black"> pts</span>
+        </p>
+        <p className="text-xl text-center mt-4">
           Track your points and redeem them for exciting rewards!
         </p>
       </div>
