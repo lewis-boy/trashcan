@@ -2,8 +2,10 @@
 import React from "react"
 import { submitContactForm } from "../actions"
 import { useActionState } from "react"
+import { useRouter } from "next/navigation" // Import useRouter
 
 export default function Login() {
+  const router = useRouter()
   const [error, action, isLoading] = useActionState(submitContactForm, "")
 
   return (
@@ -82,7 +84,7 @@ export default function Login() {
             className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-4 w-[80%] text-lg"
           />
           <button
-            type="submit"
+            onClick={() => router.push("/deposit")}
             className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-6 w-[80%] bg-[var(--primary-color)] text-[var(--secondary-color)] text-2xl hover:cursor-pointer hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors duration-300 ease-in-out"
           >
             {isLoading ? "Sending..." : "Login"}

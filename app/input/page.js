@@ -89,7 +89,7 @@ export default function Input() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 border-2 border-black rounded-lg"
+                className="w-full px-4 py-2 border-5 border-black rounded-lg"
                 placeholder="example@example.com"
               />
             </div>
@@ -132,14 +132,14 @@ export default function Input() {
           {/* Buttons */}
           <div className="flex justify-between w-full">
             <button
-              className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition"
+              className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 transition hover:cursor-pointer"
               onClick={() => router.push("/deposit")} // Navigate back to the deposit page
             >
               Cancel
             </button>
             <button
-              className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition"
-              onClick={handleSubmit} // Start slot machine
+              className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition hover:cursor-pointer"
+              onClick={() => router.push("/points")} // Start slot machine
             >
               Submit
             </button>

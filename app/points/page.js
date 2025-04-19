@@ -1,13 +1,6 @@
 "use client"
-import React from "react"
-import { submitContactForm } from "../actions"
-import { useActionState } from "react"
-import { useRouter } from "next/navigation" // Import useRouter
 
-export default function Signup() {
-  const router = useRouter()
-  const [error, action, isLoading] = useActionState(submitContactForm, "")
-
+export default function Points() {
   return (
     <section className="flex flex-col justify-between items-center h-screen bg-green-700 bg-dots relative overflow-hidden">
       {/* Top Band */}
@@ -30,7 +23,7 @@ export default function Signup() {
             viewBox="0 0 64 64"
             width="80"
             height="80"
-            className="fill-green-600"
+            className="fill-green-600 hover:cursor-pointer"
           >
             <circle
               cx="32"
@@ -61,56 +54,12 @@ export default function Signup() {
         </a>
       </div>
 
-      {/* Middle Section: Signup Form */}
+      {/* Content Section */}
       <div className="flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[800px] h-auto py-12 px-10 shadow-lg mt-16">
-        <form
-          action={action}
-          className="w-full flex flex-col items-center justify-center gap-6"
-        >
-          <h2 className="text-6xl font-extrabold mb-6">Signup</h2>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="Enter your email"
-            className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-4 w-[80%] text-lg"
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            placeholder="Create a password"
-            className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-4 w-[80%] text-lg"
-          />
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            required
-            placeholder="Confirm your password"
-            className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-4 w-[80%] text-lg"
-          />
-          <button
-            onClick={() => router.push("/login")}
-            className="border-5 border-solid border-[var(--primary-color)] rounded-lg py-3 px-6 w-[80%] bg-[var(--primary-color)] text-[var(--secondary-color)] text-2xl hover:cursor-pointer hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors duration-300 ease-in-out"
-          >
-            {isLoading ? "Sending..." : "Signup"}
-          </button>
-
-          {error && <p className="text-red-600 text-lg">{error}</p>}
-
-          <p className="text-xl mt-6">
-            Already have an account?{" "}
-            <a
-              href="/login"
-              className="text-[var(--highlight-color)]"
-            >
-              Login
-            </a>
-          </p>
-        </form>
+        <h1 className="text-4xl font-bold mb-6">Your Points</h1>
+        <p className="text-xl text-center">
+          Track your points and redeem them for exciting rewards!
+        </p>
       </div>
 
       {/* Bottom Band */}

@@ -44,13 +44,13 @@ export default function Home() {
       <div className="absolute top-4 right-4 flex gap-4">
         <a
           href="/login"
-          className="bg-white text-green-600 text-lg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 transition"
+          className="bg-white text-green-600 text-lg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 hover:text-white  transition"
         >
           Login
         </a>
         <a
           href="/signup"
-          className="bg-white text-green-600 text-lg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 transition"
+          className="bg-white text-green-600 text-lg font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 hover:text-white transition"
         >
           Signup
         </a>
@@ -84,7 +84,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="/signup"
+                      href="/deposit"
                       className="bg-green-600 text-xl no-underline text-current border-5 border-green-50 rounded py-1 px-2 page-btn-links hover:bg-[var(--primary-color)] hover:text-[var(--secondary-color)]"
                     >
                       Start Earning

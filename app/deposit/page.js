@@ -73,7 +73,7 @@ export default function Deposit() {
         </h1>
         <div className="w-full bg-green-500 border-t-12 border-b-12 border-black h-20 overflow-hidden mt-8 mb-16"></div>
         <button
-          className={`${bungeeSpice.className} px-6 py-6 rounded-full bg-white text-green-600 font-bold text-xl shadow-lg hover:bg-green-100 hover:scale-105 transition-transform duration-300 ease-in-out mt-4`}
+          className={`${bungeeSpice.className} px-6 py-6 rounded-full bg-white text-green-600 font-bold text-xl shadow-lg hover:bg-green-100 hover:scale-105 transition-transform duration-300 ease-in-out mt-4 hover:cursor-pointer`}
           onClick={() => router.push("/input")} // Navigate to the input page
         >
           🌱 Start Trash Deposit 🌿
