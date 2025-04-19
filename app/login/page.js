@@ -20,6 +20,44 @@ export default function Login() {
         ></div>
       </div>
 
+      {/* Top-Left Tree */}
+      <div className="absolute top-24 left-4">
+        <a href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            width="80"
+            height="80"
+            className="fill-green-600"
+          >
+            <circle
+              cx="32"
+              cy="20"
+              r="12"
+              className="fill-green-500"
+            />
+            <circle
+              cx="22"
+              cy="30"
+              r="10"
+              className="fill-green-500"
+            />
+            <circle
+              cx="42"
+              cy="30"
+              r="10"
+              className="fill-green-500"
+            />
+            <rect
+              x="28"
+              y="30"
+              width="8"
+              height="20"
+              className="fill-amber-950"
+            />
+          </svg>
+        </a>
+      </div>
       {/* Middle Section: Login Form */}
       <div className="flex flex-col items-center bg-green-100 border-12 border-black rounded-lg w-[800px] h-[600px] py-12 px-10 shadow-lg mt-16">
         <form
@@ -63,7 +101,6 @@ export default function Login() {
           </p>
         </form>
       </div>
-
       {/* Bottom Band */}
       <div className="w-full bg-green-500 border-t-12 border-b-12 border-black h-20 overflow-hidden">
         <div
